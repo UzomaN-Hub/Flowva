@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calendar, UserPlus, Gift } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function ToolSpotlight() {
   return (
@@ -33,10 +34,12 @@ export default function ToolSpotlight() {
       {/* Sign Up Button */}
       <div className='p-1 sm:p-1.5 flex border-t border-gray-300'>
         <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0 w-full px-2 sm:px-3">
-          <button className="text-white w-full sm:w-auto text-xs sm:text-sm bg-purple-600 flex items-center justify-center gap-1.5 sm:gap-2 rounded-3xl p-2 cursor-pointer">
-            <UserPlus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-            Sign up
-          </button>
+          <Link to="/login">
+                <button className="text-white w-full sm:w-auto text-xs sm:text-sm bg-purple-600 flex items-center justify-center gap-1.5 sm:gap-2 rounded-3xl p-2 cursor-pointer">
+                    <UserPlus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    Sign up
+                </button>
+            </Link>
 
           <button className="text-xs sm:text-sm w-full sm:w-auto flex items-center justify-center gap-1.5 sm:gap-2 text-white bg-[linear-gradient(to_bottom_right,_theme(colors.purple.600)_30%,_theme(colors.red.400)_100%)] rounded-3xl p-2 cursor-pointer">
             <Gift className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
