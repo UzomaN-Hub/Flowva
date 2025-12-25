@@ -1,4 +1,6 @@
 import { Home, Compass, BookOpen, Layers, CreditCard, Settings, Gift, Menu, X } from 'lucide-react'
+import flowva from "../assets/flowva.png";
+
 import { useAuth } from '../../hooks/useAuth'
 import { useState } from 'react'
 
@@ -47,7 +49,14 @@ export default function Sidebar({ activeTab, onTabChange }) {
         {/* Logo */}
         <div className="p-4 sm:p-5 border-b border-gray-200">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg"></div>
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg overflow-hidden">
+                <img
+                    src={flowva}
+                    alt="Flowva logo"
+                    className="w-full h-full object-cover"
+                />
+            </div>
+
             <span className="text-base sm:text-lg font-bold text-gray-900">Flowva</span>
           </div>
         </div>
