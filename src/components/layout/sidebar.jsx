@@ -1,5 +1,5 @@
 import { Home, Compass, BookOpen, Layers, CreditCard, Settings, Gift, Menu, X } from 'lucide-react'
-import flowva from "../assets/flowva.png";
+import flowva from "../../assets/flowva.png"
 
 import { useAuth } from '../../hooks/useAuth'
 import { useState } from 'react'
@@ -57,7 +57,8 @@ export default function Sidebar({ activeTab, onTabChange }) {
                 />
             </div>
 
-            <span className="text-base sm:text-lg font-bold text-gray-900">Flowva</span>
+            <span className="text-base sm:text-lg italic font-normal text-purple-600">Flowva</span>
+
           </div>
         </div>
 
