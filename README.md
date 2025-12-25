@@ -6,7 +6,7 @@ A full-stack rewards platform built with React and Supabase, allowing users to e
 
 ##  Live Demo
 
-**Live URL:** [https://your-deployment-url.vercel.app](https://your-deployment-url.vercel.app)
+**Live URL:** [https://flowva-rewards-hub.vercel.app/](https://flowva-rewards-hub.vercel.app/)
 
 ##  Features
 
@@ -82,7 +82,7 @@ VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+
 
 ##  Database Setup
 
@@ -290,6 +290,3 @@ Contributions are welcome! Please follow these steps:
 ##  Contact
 
 For questions or support, contact: uzomanwaiwu@gmail.com
-#   F l o w v a 
- 
- 
