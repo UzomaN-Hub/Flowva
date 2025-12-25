@@ -6,9 +6,10 @@ export default function Login() {
   const [isSignUp, setIsSignUp] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [showPassword, setShowPassword] = useState(false) // <-- new state
+  const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [showModal, setShowModal] = useState(false) // <-- new state for modal
   
   const { signIn, signUp } = useAuth()
 
@@ -23,6 +24,11 @@ export default function Login() {
         : await signIn(email, password)
       
       if (error) throw error
+
+      // Show modal only when signing up successfully
+      if (isSignUp) {
+        setShowModal(true)
+      }
     } catch (err) {
       setError(err.message)
     } finally {
@@ -32,7 +38,7 @@ export default function Login() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
+      <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md relative">
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl mx-auto mb-4 flex items-center justify-center">
@@ -63,7 +69,7 @@ export default function Login() {
               Password
             </label>
             <input
-              type={showPassword ? 'text' : 'password'} // <-- toggle type
+              type={showPassword ? 'text' : 'password'}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -109,6 +115,24 @@ export default function Login() {
               : "Don't have an account? Sign Up"}
           </button>
         </div>
+
+        {/* Confirmation Modal */}
+        {showModal && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">
+            <div className="bg-white rounded-xl p-6 w-80 max-w-sm text-center shadow-xl relative">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Confirmation Sent!</h3>
+              <p className="text-sm text-gray-600 mb-6">
+                A confirmation email has been sent to <span className="font-medium">{email}</span>. Please check your inbox to verify your account.
+              </p>
+              <button
+                onClick={() => setShowModal(false)}
+                className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
