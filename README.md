@@ -1,4 +1,4 @@
-# Flowva Rewards Hub 🎁
+# Flowva Rewards Hub 
 
 A full-stack rewards platform built with React and Supabase, allowing users to earn points through daily check-ins, referrals, and redeem them for gift cards and rewards.
 
@@ -55,8 +55,8 @@ A full-stack rewards platform built with React and Supabase, allowing users to e
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/flowvahub-rewards.git
-cd flowvahub-rewards
+git clone https://github.com/UzomaN-Hub/flowva.git
+cd flow
 ```
 
 2. **Install dependencies**
@@ -290,5 +290,6 @@ Contributions are welcome! Please follow these steps:
 ##  Contact
 
 For questions or support, contact: uzomanwaiwu@gmail.com
-#   F l o w v a  
+#   F l o w v a 
+ 
  
